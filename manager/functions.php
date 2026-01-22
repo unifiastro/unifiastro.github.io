@@ -33,7 +33,7 @@ function rebuildIndex() {
         preg_match('/<title>(.*?)<\/title>/', $content, $titleMatch);
         $title = $titleMatch[1] ?? 'Untitled';
 
-        preg_match('/<strong>Supervisor:<\/strong>\s*(.*?)<br>/i', $content, $supervisorMatch);
+        preg_match('/<strong>Supervisor(?:\(s\))?:<\/strong>\s*(.*?)<br>/i', $content, $supervisorMatch);
         $supervisor = $supervisorMatch[1] ?? 'Unknown';
 
         preg_match('/<strong>Type:<\/strong>\s*(.*?)\s*Thesis/i', $content, $typeMatch);

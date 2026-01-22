@@ -26,15 +26,14 @@ foreach ($jsonFiles as $file) {
         $data['topic'] = $topicMap[$currentTopic];
         file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT));
     }
-    
-    $title = htmlspecialchars($data['title'] ?? 'Untitled', ENT_QUOTES, 'UTF-8', false);
-    $topic = htmlspecialchars($data['topic'] ?? 'General', ENT_QUOTES, 'UTF-8', false);
-    $supervisor = htmlspecialchars($data['supervisor'] ?? '', ENT_QUOTES, 'UTF-8', false);
-    $type = ucfirst(htmlspecialchars($data['thesis_type'] ?? 'Bachelor', ENT_QUOTES, 'UTF-8', false));
-    $duration = htmlspecialchars($data['duration'] ?? '', ENT_QUOTES, 'UTF-8', false);
-    $supervisor = htmlspecialchars($data['supervisor'] ?? '', ENT_QUOTES, 'UTF-8', false);
-    $collaborators = htmlspecialchars($data['collaborators'] ?? '', ENT_QUOTES, 'UTF-8', false);
-    $contacts = htmlspecialchars($data['contacts'] ?? '', ENT_QUOTES, 'UTF-8', false);
+
+    $title = htmlspecialchars($data['title'] ?? 'Untitled');
+    $topic = htmlspecialchars($data['topic'] ?? 'General');
+    $type = ucfirst(htmlspecialchars($data['thesis_type'] ?? 'Bachelor'));
+    $duration = htmlspecialchars($data['duration'] ?? '');
+    $supervisor = htmlspecialchars($data['supervisor'] ?? '');
+    $collaborators = htmlspecialchars($data['collaborators'] ?? '');
+    $contacts = htmlspecialchars($data['contacts'] ?? '');
     $image = $data['image'] ?? '';
     
     $desc = $data['description'] ?? '';
@@ -115,8 +114,8 @@ foreach ($jsonFiles as $file) {
         <div class='meta'>
             <strong>Topic:</strong> $topic<br>
             <strong>Type:</strong> $type Thesis<br>
-            <strong>Duration:</strong> $duration months<br>
-            <strong>Supervisor:</strong> $supervisor<br>
+            <strong>Duration (months):</strong> $duration months<br>
+            <strong>Supervisor(s):</strong> $supervisor<br>
             $collabHtml
         </div>
 

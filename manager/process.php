@@ -122,8 +122,8 @@ $htmlContent = <<<HTML
         <div class='meta'>
             <strong>Topic:</strong> $topic<br>
             <strong>Type:</strong> $type Thesis<br>
-            <strong>Duration:</strong> $duration months<br>
-            <strong>Supervisor:</strong> $supervisor<br>
+            <strong>Duration (months):</strong> $duration months<br>
+            <strong>Supervisor(s):</strong> $supervisor<br>
             $collabHtml
         </div>
 
